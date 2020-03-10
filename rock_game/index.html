@@ -29,7 +29,6 @@
     };
 
     const $output = document.getElementById('output');
-
     Object.keys($button).forEach(key => {
         $button[key].addEventListener('click', function () {
             fetch(`http://${location.host}/game?action=${key}`)
