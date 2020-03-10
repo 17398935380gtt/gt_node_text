@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="output"/>
+<div id="handleBtn">点击请求数据</div>
+</body>
+<script>
+    var btn=document.getElementById('handleBtn'),
+        output=document.getElementById('output');
+
+    btn.addEventListener("click", function () {
+        fetch(`http://${location.host}/data`)
+            .then((res) => {
+                console.log(res);
+                return res.text()
+            })
+            .then((text) => {
+                output.innerHTML += text + '<br/>';
+            })
+    })
+</script>
+</html>
